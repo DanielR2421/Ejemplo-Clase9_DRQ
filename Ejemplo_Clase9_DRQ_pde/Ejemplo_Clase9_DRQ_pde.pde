@@ -27,34 +27,31 @@ void draw() {
   myCat.display();
   myCat.run();
 
-  myDog.displayD();
-  myDog.runD();
-  myDog.bark();
-}
-
-class Cat {
- //Propiedades
- color c;
- float posX;
- float posY;
- Float speed;
+ // myDog.display();
+ // myDog.runD();
  
- //Constructor
- //Uso la paalabroa temp para definir varibles diferente y no sobreescribir las otras
- Cat(color tempC, float tempPosX, float tempPosY, float tempSpeed) {
+}
+class Mamifero {
+//Propiedades
+color c;
+float posX;
+float posY;
+float speed;
+
+//Constructor
+Mamifero(color tempC, float tempPosX, float tempPosY, float tempSpeed) {
  c = tempC;
  posX = tempPosX;
  posY = tempPosY;
  speed = tempSpeed;
 
- }
+}
  
  //Metodos
  void display() {
    stroke(0);
    fill(0);
    ellipse(posX, posY, 50, 50);
- 
  
  }
  
@@ -67,49 +64,34 @@ class Cat {
  
  } 
  }
- class Dog {
- //Propiedades
- color cD;
- float posXd;
- float posYd;
- float speedD;
- float size;
+}
+class Perro extends Mamifero {
+ float lenghthTail;
  
- //Constructor
- //Uso la paalabroa temp para definir varibles diferente y no sobreescribir las otras
- Dog(color tempCd, float tempPosXd, float tempPosYd, float tempSpeedD, float tempSize) {
- cD = tempCd;
- posXd = tempPosXd;
- posYd = tempPosYd;
- speedD = tempSpeedD;
- size = tempSize;
-
- }
+ void ladrar() {
+ //Ejecutar el sonido de un ladrido
  
- //Metodos
- void displayD() {
-   stroke(0);
-   fill(0);
-   ellipse(posXd, posYd, size, size);
- 
- 
- }
- 
- void runD() {
-  // posY = posY + speed;
-  posXd += speedD;
- 
- if(posX > width || posX < 0){
-   speedD *= -1;
- 
-  } 
- }
- void bark() {
-  size += speedD;
-  
-  if(size > 50 || size < 50){
-   speedD *= -1;
-    
  }
 }
+class Gato extends Mamifero {
+ float lenghthNails;
+ 
+ void maullar() {
+ //Ejecutar el sonido de un maullido
+ 
  }
+}
+
+class Elefante extends Mamifero {
+ float lenghthTrump;
+ 
+ void caminarHaciaAtras() {
+ //Ejecutar el sonido de un maullido
+ 
+ }
+}
+
+
+
+
+}
