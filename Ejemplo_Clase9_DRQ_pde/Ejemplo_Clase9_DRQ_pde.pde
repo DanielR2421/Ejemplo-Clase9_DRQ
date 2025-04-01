@@ -14,7 +14,7 @@ Cat myCat;
 void setup(){
   size(800, 800);
   //Obejto  //
-  myCat = new Cat(color(255, 100, 100), 10, 50, 5);
+  myCat = new Cat(color(255, 100, 100), width/2, 50, 5);
 
 }
 
@@ -55,6 +55,10 @@ class Cat {
   // posY = posY + speed;
   posY += speed;
  
+ if(posY > height || posY < 0){
+   speed *= -1;
+ 
+ }
  
  
  
