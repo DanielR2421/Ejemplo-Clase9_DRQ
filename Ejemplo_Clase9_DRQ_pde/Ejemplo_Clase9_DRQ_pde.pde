@@ -11,11 +11,13 @@
 // Contenedor
 Perro miPerro;
 
+Gato miGato;
+
 void setup(){
   size(800, 800);
   //Obejto  //
   miPerro = new Perro(color(255), width/2, 50, 5, 10);
-  
+   miGato = new Gato(color(100), width/3, 50, 5, 10);
 
 }
 
@@ -25,6 +27,10 @@ void draw() {
  miPerro.display();
  miPerro.move();
  miPerro.ladrar();
+ 
+ miGato.display();
+ miGato.move();
+ miGato.maullar();
  
 }
 class Mamifero {
@@ -78,14 +84,21 @@ class Perro extends Mamifero {
 }
 
 
-//class Gato extends Mamifero {
- //float lenghthNails;
+class Gato extends Mamifero {
+ float lenghthNails;
  
-// void maullar() {
- //Ejecutar el sonido de un maullido
+  //Constructor
+ Gato(color tempC, float tempPosX, float tempPosY, float tempSpeed, float templenghthNails) {
+ super(tempC, tempPosX, tempPosY, tempSpeed);
+ lenghthNails = templenghthNails;   
+
+ }
  
-// }
-//}
+ void maullar() {
+println("Miau");
+ 
+ }
+}
 
 //class Elefante extends Mamifero {
 // float lenghthTrump;
