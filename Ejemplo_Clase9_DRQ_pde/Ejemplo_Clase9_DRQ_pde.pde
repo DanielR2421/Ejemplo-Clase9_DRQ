@@ -52,7 +52,7 @@ Mamifero(color tempC, float tempPosX, float tempPosY, float tempSpeed) {
  //Metodos
  void display() {
    stroke(0);
-   fill(255);
+   fill(c);
    ellipse(posX, posY, 50, 50);
  
  }
