@@ -9,26 +9,22 @@
 //EJERCICIO 1
 
 // Contenedor
-Cat myCat;
-
-Dog myDog;
+Perro miPerro;
 
 void setup(){
   size(800, 800);
   //Obejto  //
-  myCat = new Cat(color(255, 100, 100), width/2, 50, 5);
+  miPerro = new Perro(color(255), width/2, 50, 5, 10);
   
-  myDog = new Dog(color(255, 100, 100), 50, width/2, 5);
 
 }
 
 void draw() {
-  background(255);
-  myCat.display();
-  myCat.run();
+  background(0);
 
- // myDog.display();
- // myDog.runD();
+ miPerro.display();
+ miPerro.move();
+ miPerro.ladrar();
  
 }
 class Mamifero {
@@ -50,12 +46,12 @@ Mamifero(color tempC, float tempPosX, float tempPosY, float tempSpeed) {
  //Metodos
  void display() {
    stroke(0);
-   fill(0);
+   fill(255);
    ellipse(posX, posY, 50, 50);
  
  }
  
- void run() {
+ void move() {
   // posY = posY + speed;
   posY += speed;
  
@@ -65,33 +61,38 @@ Mamifero(color tempC, float tempPosX, float tempPosY, float tempSpeed) {
  } 
  }
 }
+
 class Perro extends Mamifero {
- float lenghthTail;
+ float lengthTail;
  
+ //Constructor
+ Perro(color tempC, float tempPosX, float tempPosY, float tempSpeed, float tempLengthTail) {
+ super(tempC, tempPosX, tempPosY, tempSpeed);
+ lengthTail = tempLengthTail;   
+
+ }
  void ladrar() {
- //Ejecutar el sonido de un ladrido
+ println("Guau");
  
  }
 }
-class Gato extends Mamifero {
- float lenghthNails;
+
+
+//class Gato extends Mamifero {
+ //float lenghthNails;
  
- void maullar() {
+// void maullar() {
  //Ejecutar el sonido de un maullido
  
- }
-}
+// }
+//}
 
-class Elefante extends Mamifero {
- float lenghthTrump;
+//class Elefante extends Mamifero {
+// float lenghthTrump;
  
- void caminarHaciaAtras() {
+// void caminarHaciaAtras() {
  //Ejecutar el sonido de un maullido
  
- }
-}
-
-
-
-
-}
+// }
+//}
+//}
