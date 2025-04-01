@@ -11,10 +11,14 @@
 // Contenedor
 Cat myCat;
 
+Dog myDog;
+
 void setup(){
   size(800, 800);
   //Obejto  //
   myCat = new Cat(color(255, 100, 100), width/2, 50, 5);
+  
+  myDog = new Dog(color(255, 100, 100), 50, width/2, 5);
 
 }
 
@@ -23,6 +27,9 @@ void draw() {
   myCat.display();
   myCat.run();
 
+  myDog.displayD();
+  myDog.runD();
+  myDog.bark();
 }
 
 class Cat {
@@ -58,9 +65,51 @@ class Cat {
  if(posY > height || posY < 0){
    speed *= -1;
  
+ } 
+ }
+ class Dog {
+ //Propiedades
+ color cD;
+ float posXd;
+ float posYd;
+ float speedD;
+ float size;
+ 
+ //Constructor
+ //Uso la paalabroa temp para definir varibles diferente y no sobreescribir las otras
+ Dog(color tempCd, float tempPosXd, float tempPosYd, float tempSpeedD, float tempSize) {
+ cD = tempCd;
+ posXd = tempPosXd;
+ posYd = tempPosYd;
+ speedD = tempSpeedD;
+ size = tempSize;
+
  }
  
+ //Metodos
+ void displayD() {
+   stroke(0);
+   fill(0);
+   ellipse(posXd, posYd, size, size);
  
  
+ }
+ 
+ void runD() {
+  // posY = posY + speed;
+  posXd += speedD;
+ 
+ if(posX > width || posX < 0){
+   speedD *= -1;
+ 
+  } 
+ }
+ void bark() {
+  size += speedD;
+  
+  if(size > 50 || size < 50){
+   speedD *= -1;
+    
  }
 }
+ }
