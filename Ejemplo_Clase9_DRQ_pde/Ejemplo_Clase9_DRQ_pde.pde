@@ -10,13 +10,14 @@
 
 // Contenedor
 Perro miPerro;
-
+Perro miPerro2;
 Gato miGato;
 
 void setup(){
   size(800, 800);
   //Obejto  //
   miPerro = new Perro(color(255), width/2, 50, 5, 10);
+   miPerro2 = new Perro(color(200, 100, 100), width/4, 50, 10, 10);
    miGato = new Gato(color(100), width/3, 50, 5, 10);
 
 }
@@ -27,6 +28,10 @@ void draw() {
  miPerro.display();
  miPerro.move();
  miPerro.ladrar();
+ 
+ miPerro2.display();
+ miPerro2.move();
+ miPerro2.ladrar();
  
  miGato.display();
  miGato.move();
