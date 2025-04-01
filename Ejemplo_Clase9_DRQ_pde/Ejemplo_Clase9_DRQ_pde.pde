@@ -12,11 +12,16 @@
 Cat myCat;
 
 void setup(){
-  myCat1 = new Cat();
+  size(800, 800);
+  //Obejto  //
+  myCat = new Cat(color(255, 100, 100), 10, 50, 5);
 
 }
 
 void draw() {
+  background(255);
+  myCat.display();
+  myCat.run();
 
 }
 
@@ -41,12 +46,14 @@ class Cat {
  void display() {
    stroke(0);
    fill(0);
-   ellipse(50, 50, 50, 50);
+   ellipse(posX, posY, 50, 50);
  
  
  }
  
  void run() {
+  // posY = posY + speed;
+  posY += speed;
  
  
  
